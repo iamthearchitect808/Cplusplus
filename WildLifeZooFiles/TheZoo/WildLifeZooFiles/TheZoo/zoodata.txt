@@ -1,0 +1,4 @@
+Track #   Name           Type           Sub-Type       Eggs  Nurse 
+000002    Bart           Mammal         Lion           
+0000001   Piper          Mammal         Dog            
+000003    Martha         Oviparous      Ostrich        
