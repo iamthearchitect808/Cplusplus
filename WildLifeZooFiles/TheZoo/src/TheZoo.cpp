@@ -227,7 +227,7 @@ void SaveDataToFile(vector<Animal*> &animalVector)  //replace file contents with
         << "Sub-Type       " << "Eggs  " << "Nurse " << endl;
 
     for (i = 0; i < animalVector.size(); ++i) {
-    	animalVector.at(i)->FilePrint();
+    	animalVector.at(i)->FilePrint(outFS);
     }
     cout << "Save successfully completed." << endl;
     cout << "Closing file" << endl;

@@ -17,7 +17,7 @@ class Animal {
 	    void SetType(string type);
 	    void SetSubType(string subType);
 	    virtual void PrintItem();  //for printing data to screen depending on vector element subclass type Mammal or Oviparous
-	    virtual void FilePrint(); //for writing data to text file depending on vector element subclass type Mammal or Oviparous
+	    virtual void FilePrint(ofstream outFS); //for writing data to text file depending on vector element subclass type Mammal or Oviparous
 	    string GetTrackNum();  //accessors for other functions
 	    string GetName();
 	    string GetType();

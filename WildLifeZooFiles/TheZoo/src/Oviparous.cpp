@@ -28,8 +28,8 @@ void Oviparous::PrintItem() {
 		 << setw(6) << left << numEggs << setw(6) << left << 0 << endl;
 }
 
-void Oviparous::FilePrint() {
-	ofstream oFS;
+void Oviparous::FilePrint(ofstream oFS) {
+	ofstream outFS = oFS;
 
 	oFS << setw(10) << left << trackRfid << setw(15) << left << animalName
 		 << setw(15) << left << animalType << setw(15) << left << animalSubType << endl;
