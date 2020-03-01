@@ -28,8 +28,7 @@ void Mammal::PrintItem() {
 		 << setw(6) << left << 0 << setw(6) << left << numNurse << endl;
 }
 
-void Mammal::FilePrint(ofstream oFS) {
-	ofstream outFS = oFS;
+void Mammal::FilePrint(ofstream &oFS) {
 
 	oFS << setw(10) << left << trackRfid << setw(15) << left << animalName
 		 << setw(15) << left << animalType << setw(15) << left << animalSubType << endl;

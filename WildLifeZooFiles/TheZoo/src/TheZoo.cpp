@@ -98,23 +98,25 @@ void AddAnimal(vector<Animal*> &animalVector) //function to add new animal objec
 	    cout << "Enter sub-type:" << endl;
 	    cin >> subType;
 	}
-
-	cout << "Save new animal? Y/N" << endl;
-	cin >> response;
-
-	if (response == "Y" || response == "y") {  //loop runs only if response is Y or y
-		if (type == "Mammal" || type == "mammal") {  //will create new vector element pointer of subclass Mammal
-			eggs = 0;
-			cout << "Enter number nursing, 0 if none:" << endl;
-			cin >> nurse;
+	if (type == "Mammal" || type == "mammal") {  //will create new vector element pointer of subclass Mammal
+		eggs = 0;
+		cout << "Enter number nursing, 0 if none:" << endl;
+		cin >> nurse;
+		cout << "Save new animal? Y/N" << endl;
+		cin >> response;
+		if (response == "Y" || response == "y") {
 			mammalPtr = new Mammal; //initialize new subclass pointer
 			mammalPtr->SetData(trackingNum, name, type, subType, nurse);  //set values to subclass object pointer
 			animalVector.push_back(mammalPtr); //add to back of vector
 		}
-		else if (type == "Oviparous" || type == "oviparous") { //will create new vector element pointer of subclass Oviparous
-			nurse = 0;
-			cout << "Enter number of eggs, 0 if none:" << endl;
-			cin >> eggs;
+	}
+	else if (type == "Oviparous" || type == "oviparous") { //will create new vector element pointer of subclass Oviparous
+		nurse = 0;
+		cout << "Enter number of eggs, 0 if none:" << endl;
+		cin >> eggs;
+		cout << "Save new animal? Y/N" << endl;
+		cin >> response;
+		if (response == "Y" || response == "y") {
 			oviparousPtr = new Oviparous; //initialize new subclass pointer
 			oviparousPtr->SetData(trackingNum, name, type, subType, eggs); //set values to subclass object pointer
 			animalVector.push_back(oviparousPtr);  //add to back of vector
@@ -227,7 +229,7 @@ void SaveDataToFile(vector<Animal*> &animalVector)  //replace file contents with
         << "Sub-Type       " << "Eggs  " << "Nurse " << endl;
 
     for (i = 0; i < animalVector.size(); ++i) {
-    	animalVector.at(i)->FilePrint(outFS);
+    	animalVector.at(i)->FilePrint(outFS);  //calls virtual FilePrint function with output filestream as parameter
     }
     cout << "Save successfully completed." << endl;
     cout << "Closing file" << endl;

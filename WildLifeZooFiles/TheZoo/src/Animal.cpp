@@ -13,10 +13,10 @@ Animal::Animal() {  //for function explanations, see header file
 }
 
 Animal::~Animal() {
-	delete *trackRfid;
-	delete *animalName;
-	delete *animalType;
-	delete *animalSubType;
+	//delete *trackRfid;
+	//delete *animalName;
+	//delete *animalType;
+	//delete *animalSubType;
 }
 
 Animal::Animal(int trackNum, string name, string type, string subType) {
@@ -35,8 +35,7 @@ void Animal::PrintItem() {   //to print data to screen
 		 << setw(15) << left << animalType << setw(15) << left << animalSubType << endl;
 }
 
-void Animal::FilePrint(ofstream oFS) {
-	ofstream outFS = oFS;  //initialize output stream for writing data to file
+void Animal::FilePrint(ofstream &oFS) { //print data to file
 
 	oFS << setw(10) << left << trackRfid << setw(15) << left << animalName
 		 << setw(15) << left << animalType << setw(15) << left << animalSubType << endl;
